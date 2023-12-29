@@ -1,0 +1,69 @@
+h1 {
+    font-size: 4em; 
+    text-align: center;
+  }
+
+p {
+    font-size: 2em;     
+  }
+
+figure {
+    background-color: #f0f0f0; 
+    color: #333; 
+    border: 5px solid #ccc; 
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 95%;
+    justify-content: space-evenly;
+    row-gap: 10px;
+    align-items: center;
+    text-align: center;
+    font-size: 2em;
+}
+
+.grid img {
+    width: 100%;    
+}
+
+html {
+    scroll-behavior: smooth; 
+  }
+
+@media screen and (min-width: 772px){
+    .grid {
+        grid-template-columns: 45% 45%;
+        align-items: center;
+    }
+    .grid figure {
+        border-radius: 50%;
+        overflow: hidden;                
+    }
+    .grid figure:last-child {
+        grid-column: 1 / span 2;
+    }    
+}
+
+@media screen and (min-width: 992px){
+    .grid figure:nth-child(3n) {
+        grid-column: 1 / span 2;
+    } 
+    .grid figure {
+        border-radius: 0;
+    }
+}   
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto; 
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    figure {
+      background-color: #333; 
+      color: #ffd700; 
+      border-color: #000; 
+    }
+}
